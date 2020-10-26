@@ -1,5 +1,5 @@
-import torch_geometric as geo
 import torch
+import torch_geometric as geo
 
 class RecurGraphNet(torch.nn.Module):
     def __init__(self, num_node_features, num_edge_features, num_output_features):

@@ -107,4 +107,31 @@ class ReplayMemory():
                           next_state = State(initial = torch.from_numpy(self.initial), sequence = [data_from_numpy(state) for state in self.states[:sample_idx + 2]], batch = torch.from_numpy(self.batch)))
 
     def __len__(self):
-        return len(self.memory)                 
+        return len(self.memory)  
+
+
+def apply_actions(actions, env):
+    for agent_idx in range(len(actions)):
+        foreign_action, domestic_action = actions[agent_idx]
+        foreign_target_idx = math.floor(foreign_action / env.num_foreign_actions)
+        foreign_target_action = foreign_action % env.num_foreign_actions
+
+        if foreign_target_action == 0:
+            env.establish_trade(agent_idx, foreign_target_idx)
+        elif foreign_target_action == 1:
+            env.increase_imports(agent_idx, foreign_target_idx)
+        elif foreign_target_action == 2:
+            env.decrease_imports(agent_idx, foreign_target_idx)
+        elif foreign_target_action == 3:
+            env.colonize(agent_idx, foreign_target_idx)
+        elif foreign_target_action == 4:
+            env.decolonize(agent_idx, foreign_target_idx)
+
+        if domestic_action == 0:
+            env.increase_gdp(agent_idx)
+        elif domestic_action == 1:
+            env.decrease_gdp(agent_idx)
+        elif domestic_action == 2:
+            env.increase_pop(agent_idx)
+        elif domestic_action == 3:
+            env.decrease_pop(agent_idx)               
