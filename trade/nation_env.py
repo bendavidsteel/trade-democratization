@@ -1,14 +1,18 @@
+import itertools
 import os
 import random
 
 import torch
 import torch_geometric as geo
 
+import nets.recur_graph_net as net
+
 class NationEnvironment():
     def __init__(self, num_countries, device):
-        root = os.path.join('/', 'content', 'drive', 'My Drive', 'projects', 'trade_democratization')
+        curr_path = os.path.dirname(__file__)
+        root = os.path.join(curr_path, "..", "data")
         self.norm_stats = torch.load(os.path.join(root, "dataset", "processed", "norm_stats.pt"))
-        best_model = torch.load(os.path.join(root, 'best_model_recurrent.pkl'))
+        best_model = torch.load(os.path.join(root, "models", 'best_model_recurrent.pkl'))
 
         self.num_countries = num_countries
         self.device = device
@@ -16,7 +20,7 @@ class NationEnvironment():
         num_node_features = 2
         num_edge_features = 7
         num_output_features = 1
-        self.env_model = RecurGraphNet(num_node_features, num_edge_features, num_output_features).to(device)
+        self.env_model = net.RecurGraphNet(num_node_features, num_edge_features, num_output_features).to(device)
         self.env_model.load_state_dict(best_model)
         self.reset()
 
@@ -54,7 +58,7 @@ class NationEnvironment():
         # ensure no self links
         for idx in range(self.edge_indexes.shape[1]):
             if self.edge_indexes[0,idx] == self.edge_indexes[1,idx]:
-                if self.edge_indexes[1,idx] == self.num_countries:
+                if self.edge_indexes[1,idx] == self.num_countries - 1:
                     self.edge_indexes[1,idx] -= 1
                 else:
                     self.edge_indexes[1,idx] += 1
@@ -205,7 +209,7 @@ class NationEnvironment():
                                         edge_attr = (self.edge_features.clone() - self.norm_stats["attr_mean"]) / self.norm_stats["attr_std"])
 
     def get_rewards(self):
-        rewards = torch.zeros(NUM_COUNTRIES)
+        rewards = torch.zeros(self.num_countries)
         for country_idx in range(self.num_countries):
             demo = self.node_demo[country_idx, 0]
             

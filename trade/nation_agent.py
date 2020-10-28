@@ -1,17 +1,22 @@
+import random
+
 import torch
 import torch_geometric as geo
 
+import nets.recur_graph_agent as net
+import utils
+
 class NationAgent():
-    def __init__(self, agent_id, num_countries, replay_capacity, num_node_actions, num_global_actions, device):
+    def __init__(self, agent_id, num_countries, replay_capacity, num_node_actions, num_global_actions, gamma, device):
         # more node features because we will add indicator of self country and ally countries
         num_node_features, num_edge_features = 4, 7
 
         # create two DQNs for stable learning
-        self.policy_net = RecurGraphAgent(num_node_features, num_edge_features, num_node_actions, num_global_actions).to(device)
-        self.target_net = RecurGraphAgent(num_node_features, num_edge_features, num_node_actions, num_global_actions).to(device)
+        self.policy_net = net.RecurGraphAgent(num_node_features, num_edge_features, num_node_actions, num_global_actions).to(device)
+        self.target_net = net.RecurGraphAgent(num_node_features, num_edge_features, num_node_actions, num_global_actions).to(device)
         self.optimizer = torch.optim.RMSprop(self.policy_net.parameters())
 
-        self.memory = ReplayMemory(replay_capacity)
+        self.memory = utils.ReplayMemory(replay_capacity)
 
         # ensure they match
         self.target_net.load_state_dict(self.policy_net.state_dict())
@@ -20,6 +25,7 @@ class NationAgent():
         self.num_countries = num_countries
         self.num_node_actions = num_node_actions
         self.num_global_actions = num_global_actions
+        self.gamma = gamma
         self.device = device
 
 
@@ -94,7 +100,7 @@ class NationAgent():
         foreign_output, domestic_output = self.target_net(transition.next_state, step=False)
         next_state_values = foreign_output.max().detach() + domestic_output.max().detach()
         # Compute the expected Q values
-        expected_state_action_values = (next_state_values * GAMMA) + transition.reward
+        expected_state_action_values = (next_state_values * self.gamma) + transition.reward
 
         # Compute Huber loss
         loss = torch.nn.functional.smooth_l1_loss(state_action_values, expected_state_action_values)
@@ -103,3 +109,56 @@ class NationAgent():
         self.optimizer.zero_grad()
         loss.backward()
         self.optimizer.step()
+
+
+
+class InternationalAgentCollection():
+    def __init__(self, num_countries, replay_capacity, num_node_actions, num_global_actions, gamma, device):
+        self.device = device
+
+        # create agents
+        self.agents = []
+        for agent_id in range(num_countries):
+            new_agent = NationAgent(agent_id, num_countries, replay_capacity, num_node_actions, num_global_actions, gamma, device)
+            self.agents.append(new_agent)
+
+    def __getitem__(self, idx):
+        return self.agents[idx]
+
+    def reset(self, ally_groups, demo_initial):
+        new_state_dict = self.get_state()
+
+        # and then apply averaged state dict to agents
+        for agent_idx, agent in enumerate(self.agents):
+            agent_ally_group = []
+            for ally_group in ally_groups:
+                if agent_idx in ally_group:
+                    agent_ally_group = ally_group
+            # reset each individual agent
+            agent.reset(new_state_dict, agent_ally_group, demo_initial)
+
+    def get_state(self):
+        # get state dict from all agents
+        all_agent_states = []
+        for agent in self.agents:
+            all_agent_states.append(agent.get_state())
+
+        # average them
+        new_state_dict = all_agent_states[0]
+        for key in new_state_dict:
+            for idx in range(1, len(all_agent_states)):
+                new_state_dict[key] += all_agent_states[idx][key]
+            new_state_dict[key] = new_state_dict[key] / len(all_agent_states)
+
+        return new_state_dict
+
+    def select_actions(self, state, eps_threshold):
+        agent_actions = []
+        for agent in self.agents:
+            action = agent.select_action(state, eps_threshold)
+            agent_actions.append(action)
+        return agent_actions
+
+    def optimize(self):
+        for agent in self.agents:
+            agent.optimize()
