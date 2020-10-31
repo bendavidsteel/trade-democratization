@@ -115,3 +115,33 @@ class RecurGraphAgent(torch.nn.Module):
         node_flattened = final_node.view(-1)
 
         return torch.nn.functional.softmax(node_flattened), torch.nn.functional.softmax(graph_flattened)
+
+
+
+
+class RegressionGraphNet(torch.nn.Module):
+    def __init__(self, num_node_features, num_edge_features, num_outputs):
+        super(RegressionGraphNet, self).__init__()
+        # we will use the edge conditioned convolution (NNConv) as this allows more than 1 edge feature
+        # while also not requiring inputs to be scaled between 0 and 1
+
+        hidden_layer_size = 5
+
+        # NNConv requires a layer to transform the dimensionality of edge features to the required size
+        lin1 = torch.nn.Linear(num_edge_features, num_node_features * hidden_layer_size)
+
+        # arbitrarily using 16 as hidden layer size
+        self.conv1 = geo.nn.NNConv(num_node_features, hidden_layer_size, lin1)
+        self.lin1 = torch.nn.Linear(hidden_layer_size, num_outputs)
+
+    def forward(self, data):
+        # weights are by default floats
+        x, edge_index, edge_attr = data.x, data.edge_index, data.edge_attr
+
+        x = self.conv1(x, edge_index, edge_attr)
+        x = torch.nn.functional.relu(x)
+        x = torch.nn.functional.dropout(x, p=0.6, training=self.training)
+        x = self.lin1(x)
+
+        # final activation is linear as this is for regression
+        return x

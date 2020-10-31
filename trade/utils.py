@@ -135,4 +135,21 @@ def apply_actions(actions, env):
         elif domestic_action == 2:
             env.increase_pop(agent_idx)
         elif domestic_action == 3:
-            env.decrease_pop(agent_idx)               
+            env.decrease_pop(agent_idx)
+
+
+
+class Sequence():
+    def __init__(self, initial, sequence, missing_mask, target):
+        self.initial = initial
+        self.sequence = sequence
+        self.missing_mask = missing_mask
+        self.target = target
+
+    def to(self, device):
+        self.initial = self.initial.to(device)
+        self.missing_mask = self.missing_mask.to(device)
+        self.target = self.target.to(device)
+        for idx in range(len(self.sequence)):
+            self.sequence[idx] = self.sequence[idx].to(device)
+        return self
