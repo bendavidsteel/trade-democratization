@@ -4,14 +4,18 @@
             "RUS",
             "USSR"
         ],
-        "cow": []
+        "cow": [
+            "RUS"
+        ]
     },
     {
         "demtrad": [
             "YEM",
             "ADEN"
         ],
-        "cow": []
+        "cow": [
+            "YEM"
+        ]
     },
     {
         "demtrad": [
@@ -19,7 +23,9 @@
             "AOFAEF",
             "FRAAEF"
         ],
-        "cow": []
+        "cow": [
+            "CEN"
+        ]
     },
     {
         "demtrad": [
@@ -27,7 +33,9 @@
             "AOFAEF",
             "FRAAEF"
         ],
-        "cow": []
+        "cow": [
+            "CHA"
+        ]
     },
     {
         "demtrad": [
@@ -35,7 +43,9 @@
             "AOFAEF",
             "FRAAEF"
         ],
-        "cow": []
+        "cow": [
+            "DRC"
+        ]
     },
     {
         "demtrad": [
@@ -44,7 +54,9 @@
             "YUG"
         ],
         "cow": [
-            "AUH"
+            "AUH",
+            "CRO",
+            "YUG"
         ]
     },
     {
@@ -66,7 +78,9 @@
             "YUG"
         ],
         "cow": [
-            "AUH"
+            "AUH",
+            "YUG",
+            "SLV"
         ]
     },
     {
@@ -76,7 +90,8 @@
             "USSR"
         ],
         "cow": [
-            "AUH"
+            "AUH",
+            "UKR"
         ]
     },
     {
@@ -96,7 +111,9 @@
             "YUG"
         ],
         "cow": [
-            "AUH"
+            "AUH",
+            "YUG",
+            "BOS"
         ]
     },
     {
@@ -107,7 +124,8 @@
         ],
         "cow": [
             "AUH",
-            "MNG"
+            "MNG",
+            "YUG"
         ]
     },
     {
@@ -149,21 +167,25 @@
             "UNFEDMYS",
             "GBRBORNEO"
         ],
-        "cow": []
+        "cow": ["MAL"]
     },
     {
         "demtrad": [
             "BFA",
             "FRAAOF"
         ],
-        "cow": []
+        "cow": [
+            "BFO"
+        ]
     },
     {
         "demtrad": [
             "GNQ",
             "FRAAOF"
         ],
-        "cow": []
+        "cow": [
+            "EQG"
+        ]
     },
     {
         "demtrad": [
@@ -180,7 +202,9 @@
             "ZANZ",
             "GBRAFRI"
         ],
-        "cow": []
+        "cow": [
+            "ZAN"
+        ]
     },
     {
         "demtrad": [
@@ -191,21 +215,28 @@
             "ZAPCAF",
             "GBRAFRI"
         ],
-        "cow": []
+        "cow": [
+            "SAF"
+        ]
     },
     {
         "demtrad": [
             "MKD",
             "YUG"
         ],
-        "cow": ["MAC"]
+        "cow": [
+            "MAC",
+            "YUG"
+        ]
     },
     {
         "demtrad": [
             "SRB",
             "YUG"
         ],
-        "cow": []
+        "cow": [
+            "YUG"
+        ]
     },
     {
         "demtrad": [
@@ -221,14 +252,18 @@
             "COM",
             "MYT"
         ],
-        "cow": []
+        "cow": [
+            "COM"
+        ]
     },
     {
         "demtrad": [
             "ROU",
             "ROM"
         ],
-        "cow": []
+        "cow": [
+            "ROM"
+        ]
     },
     {
         "demtrad": [
@@ -236,7 +271,9 @@
             "RHOD",
             "GBRAFRI"
         ],
-        "cow": []
+        "cow": [
+            "MAW"
+        ]
     },
     {
         "demtrad": [
@@ -244,7 +281,9 @@
             "RHOD",
             "GBRAFRI"
         ],
-        "cow": []
+        "cow": [
+            "ZAM"
+        ]
     },
     {
         "demtrad": [
@@ -252,14 +291,16 @@
             "RHOD",
             "GBRAFRI"
         ],
-        "cow": []
+        "cow": [
+            "ZIM"
+        ]
     },
     {
         "demtrad": [
             "SGP",
             "STRAITS"
         ],
-        "cow": []
+        "cow": ["SIN"]
     },
     {
         "demtrad": [
@@ -293,21 +334,27 @@
             "RWA",
             "RWABDI"
         ],
-        "cow": []
+        "cow": [
+            "RWA"
+        ]
     },
     {
         "demtrad": [
             "SOM",
             "ITASOM"
         ],
-        "cow": []
+        "cow": [
+            "SOM"
+        ]
     },
     {
         "demtrad": [
             "MAR",
             "MARESP"
         ],
-        "cow": []
+        "cow": [
+            "MOR"
+        ]
     },
     {
         "demtrad": [
@@ -323,7 +370,9 @@
             "DNK",
             "SCHLES"
         ],
-        "cow": []
+        "cow": [
+            "DEN"
+        ]
     },
     {
         "demtrad": [
@@ -331,14 +380,18 @@
             "SYRLBN",
             "OTTO"
         ],
-        "cow": []
+        "cow": [
+            "LEB"
+        ]
     },
     {
         "demtrad": [
             "SYR",
             "SYRLBN"
         ],
-        "cow": []
+        "cow": [
+            "SYR"
+        ]
     },
     {
         "demtrad": [
@@ -346,63 +399,75 @@
             "OTTO",
             "GBRMEDI"
         ],
-        "cow": []
+        "cow": [
+            "CYP"
+        ]
     },
     {
         "demtrad": [
             "TUR",
             "OTTO"
         ],
-        "cow": []
+        "cow": [
+            "TUR"
+        ]
     },
     {
         "demtrad": [
             "STP",
             "PRTAFRI"
         ],
-        "cow": []
+        "cow": [
+            "STP"
+        ]
     },
     {
         "demtrad": [
             "AGO",
             "PRTAFRI"
         ],
-        "cow": []
+        "cow": [
+            "ANG"
+        ]
     },
     {
         "demtrad": [
             "MOZ",
             "PRTAFRI"
         ],
-        "cow": []
+        "cow": [
+            "MZM"
+        ]
     },
     {
         "demtrad": [
             "GNB",
             "PRTWAFRI"
         ],
-        "cow": []
+        "cow": [
+            "GNB"
+        ]
     },
     {
         "demtrad": [
             "KHM",
             "INDOCHI"
         ],
-        "cow": []
+        "cow": ["CAM"]
     },
     {
         "demtrad": [
             "LAO",
             "INDOCHI"
         ],
-        "cow": []
+        "cow": ["LAO"]
     },
     {
         "demtrad": [
             "VNM",
             "INDOCHI"
         ],
-        "cow": []
+        "cow": ["DRV"]
     },
     {
         "demtrad": [
@@ -410,7 +475,9 @@
             "ITAEAFRI",
             "GBRAFRI"
         ],
-        "cow": []
+        "cow": [
+            "ERI"
+        ]
     },
     {
         "demtrad": [
@@ -426,91 +493,107 @@
             "SLE",
             "GBRWAFRI"
         ],
-        "cow": []
+        "cow": [
+            "SIE"
+        ]
     },
     {
         "demtrad": [
             "GMB",
             "GBRWAFRI"
         ],
-        "cow": []
+        "cow": [
+            "GAM"
+        ]
     },
     {
         "demtrad": [
             "TGO",
             "GBRWAFRI"
         ],
-        "cow": []
+        "cow": [
+            "TOG"
+        ]
     },
     {
         "demtrad": [
             "EGY",
             "OTTO"
         ],
-        "cow": []
+        "cow": [
+            "EGY"
+        ]
     },
     {
         "demtrad": [
             "PNG",
             "GBRPAPUA"
         ],
-        "cow": []
+        "cow": ["PNG"]
     },
     {
         "demtrad": [
             "MLT",
             "GBRMEDI"
         ],
-        "cow": ["MLT"]
+        "cow": [
+            "MLT"
+        ]
     },
     {
         "demtrad": [
             "BGD",
             "GBRIND"
         ],
-        "cow": []
+        "cow": ["BNG"]
     },
     {
         "demtrad": [
             "BTN",
             "GBRIND"
         ],
-        "cow": []
+        "cow": [
+            "BHU"
+        ]
     },
     {
         "demtrad": [
             "IND",
             "GBRIND"
         ],
-        "cow": []
+        "cow": [
+            "IND"
+        ]
     },
     {
         "demtrad": [
             "MDV",
             "GBRIND"
         ],
-        "cow": []
+        "cow": ["MAD"]
     },
     {
         "demtrad": [
             "NPL",
             "GBRIND"
         ],
-        "cow": []
+        "cow": ["NEP"]
     },
     {
         "demtrad": [
             "PAK",
             "GBRIND"
         ],
-        "cow": []
+        "cow": [
+            "PAK"
+        ]
     },
     {
         "demtrad": [
             "LKA",
             "GBRIND"
         ],
-        "cow": []
+        "cow": ["SRI"]
     },
     {
         "demtrad": [
@@ -518,49 +601,63 @@
             "GBRAFRI",
             "FRAAFRI"
         ],
-        "cow": []
+        "cow": [
+            "CAO"
+        ]
     },
     {
         "demtrad": [
             "KEN",
             "GBRAFRI"
         ],
-        "cow": []
+        "cow": [
+            "KEN"
+        ]
     },
     {
         "demtrad": [
             "SYC",
             "GBRAFRI"
         ],
-        "cow": []
+        "cow": [
+            "SEY"
+        ]
     },
     {
         "demtrad": [
             "SDN",
             "GBRAFRI"
         ],
-        "cow": []
+        "cow": [
+            "SUD"
+        ]
     },
     {
         "demtrad": [
             "UGA",
             "GBRAFRI"
         ],
-        "cow": []
+        "cow": [
+            "UGA"
+        ]
     },
     {
         "demtrad": [
             "LSO",
             "GBRAFRI"
         ],
-        "cow": []
+        "cow": [
+            "LES"
+        ]
     },
     {
         "demtrad": [
             "SWZ",
             "GBRAFRI"
         ],
-        "cow": []
+        "cow": [
+            "SWA"
+        ]
     },
     {
         "demtrad": [
@@ -582,7 +679,9 @@
         "demtrad": [
             "SWE"
         ],
-        "cow": []
+        "cow": [
+            "SWD"
+        ]
     },
     {
         "demtrad": [
@@ -596,19 +695,23 @@
         "demtrad": [
             "GHA"
         ],
-        "cow": []
+        "cow": [
+            "GHA"
+        ]
     },
     {
         "demtrad": [
             "JPN"
         ],
-        "cow": []
+        "cow": [
+            "JPN"
+        ]
     },
     {
         "demtrad": [
             "MMR"
         ],
-        "cow": []
+        "cow": ["MYA"]
     },
     {
         "demtrad": [
@@ -684,7 +787,9 @@
         "demtrad": [
             "MLI"
         ],
-        "cow": []
+        "cow": [
+            "MLI"
+        ]
     },
     {
         "demtrad": [
@@ -698,13 +803,15 @@
         "demtrad": [
             "SEN"
         ],
-        "cow": []
+        "cow": [
+            "SEN"
+        ]
     },
     {
         "demtrad": [
             "AFG"
         ],
-        "cow": []
+        "cow": ["AFG"]
     },
     {
         "demtrad": [
@@ -718,49 +825,62 @@
         "demtrad": [
             "ETH"
         ],
-        "cow": []
+        "cow": [
+            "ETH"
+        ]
     },
     {
         "demtrad": [
             "PRK"
         ],
-        "cow": []
+        "cow": [
+            "PRK"
+        ]
     },
     {
         "demtrad": [
             "KOR"
         ],
-        "cow": []
+        "cow": [
+            "KOR",
+            "ROK"
+        ]
     },
     {
         "demtrad": [
             "NGA"
         ],
-        "cow": []
+        "cow": [
+            "NIG"
+        ]
     },
     {
         "demtrad": [
             "PHL"
         ],
-        "cow": []
+        "cow": ["PHI"]
     },
     {
         "demtrad": [
             "TZA"
         ],
-        "cow": []
+        "cow": [
+            "TAZ"
+        ]
     },
     {
         "demtrad": [
             "TWN"
         ],
-        "cow": []
+        "cow": [
+            "TAW"
+        ]
     },
     {
         "demtrad": [
             "THA"
         ],
-        "cow": []
+        "cow": ["THI"]
     },
     {
         "demtrad": [
@@ -774,13 +894,15 @@
         "demtrad": [
             "BEN"
         ],
-        "cow": []
+        "cow": [
+            "BEN"
+        ]
     },
     {
         "demtrad": [
             "IDN"
         ],
-        "cow": []
+        "cow": ["INS"]
     },
     {
         "demtrad": [
@@ -794,49 +916,63 @@
         "demtrad": [
             "NER"
         ],
-        "cow": []
+        "cow": [
+            "NIR"
+        ]
     },
     {
         "demtrad": [
             "GIN"
         ],
-        "cow": []
+        "cow": [
+            "GUI"
+        ]
     },
     {
         "demtrad": [
             "CIV"
         ],
-        "cow": []
+        "cow": [
+            "CDI"
+        ]
     },
     {
         "demtrad": [
             "MRT"
         ],
-        "cow": []
+        "cow": [
+            "MAA"
+        ]
     },
     {
         "demtrad": [
             "AUS"
         ],
-        "cow": []
+        "cow": ["AUL"]
     },
     {
         "demtrad": [
             "BWA"
         ],
-        "cow": []
+        "cow": [
+            "BOT"
+        ]
     },
     {
         "demtrad": [
             "BDI"
         ],
-        "cow": []
+        "cow": [
+            "BUI"
+        ]
     },
     {
         "demtrad": [
             "CPV"
         ],
-        "cow": []
+        "cow": [
+            "CAP"
+        ]
     },
     {
         "demtrad": [
@@ -858,7 +994,7 @@
         "demtrad": [
             "TLS"
         ],
-        "cow": []
+        "cow": ["ETM"]
     },
     {
         "demtrad": [
@@ -880,13 +1016,17 @@
         "demtrad": [
             "IRN"
         ],
-        "cow": []
+        "cow": [
+            "IRN"
+        ]
     },
     {
         "demtrad": [
             "IRQ"
         ],
-        "cow": []
+        "cow": [
+            "IRQ"
+        ]
     },
     {
         "demtrad": [
@@ -900,31 +1040,41 @@
         "demtrad": [
             "ITA"
         ],
-        "cow": ["ITA"]
+        "cow": [
+            "ITA"
+        ]
     },
     {
         "demtrad": [
             "JOR"
         ],
-        "cow": []
+        "cow": [
+            "JOR"
+        ]
     },
     {
         "demtrad": [
             "LVA"
         ],
-        "cow": []
+        "cow": [
+            "LAT"
+        ]
     },
     {
         "demtrad": [
             "LBR"
         ],
-        "cow": []
+        "cow": [
+            "LBR"
+        ]
     },
     {
         "demtrad": [
             "MNG"
         ],
-        "cow": []
+        "cow": [
+            "MON"
+        ]
     },
     {
         "demtrad": [
@@ -946,7 +1096,9 @@
         "demtrad": [
             "QAT"
         ],
-        "cow": []
+        "cow": [
+            "QAT"
+        ]
     },
     {
         "demtrad": [
@@ -960,7 +1112,9 @@
         "demtrad": [
             "TUN"
         ],
-        "cow": []
+        "cow": [
+            "TUN"
+        ]
     },
     {
         "demtrad": [
@@ -974,43 +1128,57 @@
         "demtrad": [
             "DZA"
         ],
-        "cow": []
+        "cow": [
+            "ALG"
+        ]
     },
     {
         "demtrad": [
             "ARM"
         ],
-        "cow": []
+        "cow": [
+            "ARM"
+        ]
     },
     {
         "demtrad": [
             "AZE"
         ],
-        "cow": []
+        "cow": [
+            "AZE"
+        ]
     },
     {
         "demtrad": [
             "BLR"
         ],
-        "cow": []
+        "cow": [
+            "BLR"
+        ]
     },
     {
         "demtrad": [
             "CHN"
         ],
-        "cow": []
+        "cow": [
+            "CHN"
+        ]
     },
     {
         "demtrad": [
             "COG"
         ],
-        "cow": []
+        "cow": [
+            "CON"
+        ]
     },
     {
         "demtrad": [
             "DJI"
         ],
-        "cow": []
+        "cow": [
+            "DJI"
+        ]
     },
     {
         "demtrad": [
@@ -1024,13 +1192,17 @@
         "demtrad": [
             "GAB"
         ],
-        "cow": []
+        "cow": [
+            "GAB"
+        ]
     },
     {
         "demtrad": [
             "GEO"
         ],
-        "cow": []
+        "cow": [
+            "GRG"
+        ]
     },
     {
         "demtrad": [
@@ -1044,55 +1216,73 @@
         "demtrad": [
             "KAZ"
         ],
-        "cow": []
+        "cow": [
+            "KZK"
+        ]
     },
     {
         "demtrad": [
             "KGZ"
         ],
-        "cow": []
+        "cow": [
+            "KYR"
+        ]
     },
     {
         "demtrad": [
             "LBY"
         ],
-        "cow": []
+        "cow": [
+            "LIB"
+        ]
     },
     {
         "demtrad": [
             "MDG"
         ],
-        "cow": []
+        "cow": [
+            "MAG"
+        ]
     },
     {
         "demtrad": [
             "MDA"
         ],
-        "cow": []
+        "cow": [
+            "MLD"
+        ]
     },
     {
         "demtrad": [
             "NAM"
         ],
-        "cow": []
+        "cow": [
+            "NAM"
+        ]
     },
     {
         "demtrad": [
             "TJK"
         ],
-        "cow": []
+        "cow": [
+            "TAJ"
+        ]
     },
     {
         "demtrad": [
             "TKM"
         ],
-        "cow": []
+        "cow": [
+            "TKM"
+        ]
     },
     {
         "demtrad": [
             "UZB"
         ],
-        "cow": []
+        "cow": [
+            "UZB"
+        ]
     },
     {
         "demtrad": [
@@ -1106,7 +1296,9 @@
         "demtrad": [
             "BHR"
         ],
-        "cow": []
+        "cow": [
+            "BAH"
+        ]
     },
     {
         "demtrad": [
@@ -1128,7 +1320,9 @@
         "demtrad": [
             "BGR"
         ],
-        "cow": []
+        "cow": [
+            "BUL"
+        ]
     },
     {
         "demtrad": [
@@ -1142,25 +1336,31 @@
         "demtrad": [
             "EST"
         ],
-        "cow": []
+        "cow": [
+            "EST"
+        ]
     },
     {
         "demtrad": [
             "FJI"
         ],
-        "cow": []
+        "cow": ["FIJ"]
     },
     {
         "demtrad": [
             "FIN"
         ],
-        "cow": []
+        "cow": [
+            "FIN"
+        ]
     },
     {
         "demtrad": [
             "GRC"
         ],
-        "cow": []
+        "cow": [
+            "GRC"
+        ]
     },
     {
         "demtrad": [
@@ -1180,49 +1380,63 @@
         "demtrad": [
             "ISL"
         ],
-        "cow": []
+        "cow": [
+            "ICE"
+        ]
     },
     {
         "demtrad": [
             "ISR"
         ],
-        "cow": []
+        "cow": [
+            "ISR"
+        ]
     },
     {
         "demtrad": [
             "KWT"
         ],
-        "cow": []
+        "cow": [
+            "KUW"
+        ]
     },
     {
         "demtrad": [
             "LTU"
         ],
-        "cow": []
+        "cow": [
+            "LIT"
+        ]
     },
     {
         "demtrad": [
             "MUS"
         ],
-        "cow": []
+        "cow": [
+            "MAS"
+        ]
     },
     {
         "demtrad": [
             "NZL"
         ],
-        "cow": []
+        "cow": ["NEW"]
     },
     {
         "demtrad": [
             "NOR"
         ],
-        "cow": []
+        "cow": [
+            "NOR"
+        ]
     },
     {
         "demtrad": [
             "OMN"
         ],
-        "cow": []
+        "cow": [
+            "OMA"
+        ]
     },
     {
         "demtrad": [
@@ -1236,25 +1450,29 @@
         "demtrad": [
             "SAU"
         ],
-        "cow": []
+        "cow": [
+            "SAU"
+        ]
     },
     {
         "demtrad": [
             "SLB"
         ],
-        "cow": []
+        "cow": ["SOL"]
     },
     {
         "demtrad": [
             "VUT"
         ],
-        "cow": []
+        "cow": ["VAN"]
     },
     {
         "demtrad": [
             "ARE"
         ],
-        "cow": []
+        "cow": [
+            "UAE"
+        ]
     },
     {
         "demtrad": [
