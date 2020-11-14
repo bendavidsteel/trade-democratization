@@ -1,5 +1,6 @@
 import os
 
+import pandas as pd
 import torch
 import torch_geometric as geo
 
