@@ -85,34 +85,6 @@ fig_dict['layout']['annotations'] = [
     }
 ]
 fig_dict["layout"]["hovermode"] = "closest"
-fig_dict["layout"]["updatemenus"] = [
-    {
-        "buttons": [
-            {
-                "args": [None, {"frame": {"duration": 1000, "redraw": False},
-                                "fromcurrent": True, "transition": {"duration": 300,
-                                                                    "easing": "quadratic-in-out"}}],
-                "label": "Play",
-                "method": "animate"
-            },
-            {
-                "args": [[None], {"frame": {"duration": 0, "redraw": False},
-                                  "mode": "immediate",
-                                  "transition": {"duration": 0}}],
-                "label": "Pause",
-                "method": "animate"
-            }
-        ],
-        "direction": "left",
-        "pad": {"r": 10, "t": 87},
-        "showactive": False,
-        "type": "buttons",
-        "x": 0.1,
-        "xanchor": "right",
-        "y": 0,
-        "yanchor": "top"
-    }
-]
 
 sliders_dict = {
     "active": 0,
@@ -124,7 +96,7 @@ sliders_dict = {
         "visible": True,
         "xanchor": "right"
     },
-    "transition": {"duration": 300, "easing": "cubic-in-out"},
+    "transition": {"duration": 200, "easing": "cubic-in-out"},
     "pad": {"b": 10, "t": 50},
     "len": 0.9,
     "x": 0.1,
@@ -299,4 +271,4 @@ fig_dict["layout"]["sliders"] = [sliders_dict]
 fig = go.Figure(fig_dict)
 
 #fig.show()
-fig.write_html(os.path.join(this_file_path, "colonization_visual.html"))
+fig.write_html(os.path.join(this_file_path, "colonization_visual.html"), auto_play=False, include_plotlyjs='cdn')
