@@ -5,8 +5,9 @@ import torch
 import torch_geometric as geo
 
 class TradeDemoYearByYearDataset(geo.data.InMemoryDataset):
-    def __init__(self, root, transform=None, pre_transform=None):
+    def __init__(self, root, raw=False, transform=None, pre_transform=None):
 
+        self.raw = raw
         self.norm_stats = os.path.join(root, "processed", "norm_stats.pt")
         self.node_dict = os.path.join(root, "processed", "node_dict.pt")
         self.year_start = 1901
@@ -35,7 +36,7 @@ class TradeDemoYearByYearDataset(geo.data.InMemoryDataset):
 
     @property
     def processed_file_names(self):
-        return ['traddem.pt']
+        return ['traddem_raw.pt' if self.raw else 'traddem.pt']
 
     def process(self):
         # Read data into Data object.

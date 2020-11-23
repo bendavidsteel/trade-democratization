@@ -3,7 +3,7 @@ import random
 import torch
 import torch_geometric as geo
 
-import nets.recur_graph_agent as net
+import nets as net
 import utils
 
 class NationAgent():

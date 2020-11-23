@@ -5,7 +5,7 @@ import random
 import torch
 import torch_geometric as geo
 
-import nets.recur_graph_net as net
+import nets as net
 
 class NationEnvironment():
     def __init__(self, num_countries, device):
