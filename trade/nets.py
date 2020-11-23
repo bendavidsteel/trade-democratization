@@ -145,3 +145,67 @@ class RegressionGraphNet(torch.nn.Module):
 
         # final activation is linear as this is for regression
         return x
+
+
+
+class EncoderNet(torch.nn.Module):
+    def __init__(self, num_node_features, num_edge_features):
+        super().__init__()
+
+        conv_layer_size = 32
+        self.lstm_layer_size = 32
+
+        # graph convolutional layer to create graph representation
+        conv_lin = torch.nn.Linear(num_edge_features, num_node_features * conv_layer_size)
+        self.conv = geo.nn.NNConv(num_node_features, conv_layer_size, conv_lin)
+
+        # lstm to learn sequential patterns
+        self.lstm = torch.nn.LSTM(conv_layer_size, self.lstm_layer_size, dropout=0.5)
+
+    def forward(self, sequence):
+        # do entire sequence all at once
+        batch_size = sequence[0].x.shape[0]
+
+        # create graph representation
+        graph_collection = []
+        for idx in range(len(sequence)):
+            x, edge_index, edge_attr = sequence[idx].x, sequence[idx].edge_index, sequence[idx].edge_attr
+            graph_step = torch.nn.functional.relu(self.conv(x, edge_index, edge_attr))
+            graph_collection.append(graph_step)
+        # provide graph representations as sequence to lstm
+        graph_series = torch.stack(graph_collection)
+
+        # recurrent stage
+        # zeros initial hidden state
+        initial_h_s = torch.zeros(1, batch_size, self.lstm_layer_size, device=device)
+        initial_c_s = torch.zeros(1, batch_size, self.lstm_layer_size, device=device)
+        # we don't care about the output for the encoder, just the hidden state
+        _, final_hidden = self.lstm(graph_series, (initial_h_s, initial_c_s))
+
+        # final activation is relu as this is for regression and the metrics of this dataset are all positive
+        return final_hidden
+
+
+
+class DecoderNet(torch.nn.Module):
+    def __init__(self, num_output_features):
+        super().__init__()
+
+        lstm_layer_size = 32
+
+        # lstm to learn sequential patterns
+        # auto-regressive so same num input features as final output features
+        self.lstm = torch.nn.LSTM(num_output_features, lstm_layer_size, dropout=0.5)
+
+        # final linear layer to allow full expressivity for regression after tanh activation in lstm
+        self.final_linear = torch.nn.Linear(lstm_layer_size, num_output_features)
+
+    def forward(self, input, hidden):
+        # need to do each recurrent iteration at a time to allow teacher forcing
+
+        # recurrent stage
+        # initial state of lstm is representation of target prior to this sequence
+        output, hidden = self.lstm(input, hidden)
+
+        # final activation is relu as this is for regression and the metrics of this dataset are all positive
+        return self.final_linear(output), hidden
