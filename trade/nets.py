@@ -176,11 +176,9 @@ class EncoderNet(torch.nn.Module):
         graph_series = torch.stack(graph_collection)
 
         # recurrent stage
-        # zeros initial hidden state
-        initial_h_s = torch.zeros(1, batch_size, self.lstm_layer_size, device=device)
-        initial_c_s = torch.zeros(1, batch_size, self.lstm_layer_size, device=device)
         # we don't care about the output for the encoder, just the hidden state
-        _, final_hidden = self.lstm(graph_series, (initial_h_s, initial_c_s))
+        # input hidden state defaults to zeros which is fine
+        _, final_hidden = self.lstm(graph_series)
 
         # final activation is relu as this is for regression and the metrics of this dataset are all positive
         return final_hidden
